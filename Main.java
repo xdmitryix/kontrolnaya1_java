@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         Machine_of_toy machine_of_toy = new Machine_of_toy();
-        machine_of_toy.addToy(new Doll(1, "doll1", 20));
-        machine_of_toy.addToy(new Robot(2, "robot1", 20));
-        machine_of_toy.addToy(new Constructor(1, "constructor1", 60));
+        machine_of_toy.addToy(new Robot(1, "robot", 20, 10));
+        machine_of_toy.addToy(new Constructor(2, "constructor", 20, 15));
+        machine_of_toy.addToy(new Doll(3, "doll", 60, 5));
         machine_of_toy.showAll();
     }
     
