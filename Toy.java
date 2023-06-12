@@ -27,7 +27,7 @@ public abstract class Toy {
         StringBuilder res = new StringBuilder();
         res.append(String.format("ID игрушки: %d\n", id))
                 .append(String.format("Название игрушки: %s\n", name))
-                .append(String.format("Частота выпадения: %d", weight));
+                .append(String.format("Частота выпадения в процентах: %d", weight));
         return res.toString();
     }
 }
