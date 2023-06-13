@@ -21,5 +21,8 @@ public class Main {
         Toy tempToyDrop = machine_of_toy.getToyAtIndex(temp);
         dropToy.addToysToDrop(tempToyDrop);
         dropToy.showAllDrop();
+        int quantityTemp = (machine_of_toy.getToyAtIndex(temp)).getQuantity();
+        (machine_of_toy.getToyAtIndex(temp)).setQuantity(--quantityTemp);
+        machine_of_toy.showAll();
     }
 }
