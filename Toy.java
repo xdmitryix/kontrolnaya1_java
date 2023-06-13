@@ -28,6 +28,11 @@ public abstract class Toy {
         return quantity;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();

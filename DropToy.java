@@ -13,4 +13,8 @@ public class DropToy {
             System.out.println(toysToDrop);
         }
     }
+
+    public void addToysToDrop(Toy toy) {
+        toysToDrop.add(toy);
+    }
 }

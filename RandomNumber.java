@@ -7,4 +7,5 @@ public class RandomNumber {
         return random.nextInt(1, 100);
     }
 
+
 }
