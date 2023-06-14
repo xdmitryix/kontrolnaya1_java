@@ -57,6 +57,14 @@ public class Main {
                                 System.out.println("Игрушка выдана победителю:\n" + dropToy.getToysToDropIndex(0));
                                 dropToy.dellDropIndex(0);
                             }
+                        }else{
+                            if (command.equals("exit")){
+                                break;
+                            }else{
+                                if (command.equals("help")){
+                                    System.out.println("список команд:\n drop-добавить игрушку в список на выдачу\n show-показать оставшиеся игрушки в автомате\n shdr-показать список игрушек на выдачу\n give-выдать игрушку по порядку\n help-список команд\n exit-выход\n");
+                                }
+                            }
                         }
                     }
                 }
