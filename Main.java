@@ -48,6 +48,16 @@ public class Main {
                     if(command.equals("shdr")){
                         System.out.println("Список игрушек на выдачу:\n");
                         dropToy.showAllDrop();
+                    }else{
+                        if (command.equals("give")){
+                            int dropEmpty = dropToy.isEmptyList();
+                            if (dropEmpty == 1){      
+                                System.out.println("все игрушки уже раздали победителям!");                          
+                            }else{
+                                System.out.println("Игрушка выдана победителю:\n" + dropToy.getToysToDropIndex(0));
+                                dropToy.dellDropIndex(0);
+                            }
+                        }
                     }
                 }
             }

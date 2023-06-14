@@ -18,6 +18,18 @@ public class DropToy {
         }
     }
 
+    public int isEmptyList(){
+        if (toysToDrop.isEmpty()){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    public void dellDropIndex(int index){
+        this.toysToDrop.remove(index);
+    }
+
     public int getLengthDropArr(){
         return toysToDrop.size()-1;
     } 
