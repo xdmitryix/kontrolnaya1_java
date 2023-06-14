@@ -8,11 +8,19 @@ public class DropToy {
         this.toysToDrop.add(newToy);
     }
 
+    public Toy getToysToDropIndex(int index) {
+    return toysToDrop.get(index);
+    }
+
     public void showAllDrop(){
         for (Toy toysToDrop: this.toysToDrop){
             System.out.println(toysToDrop);
         }
     }
+
+    public int getLengthDropArr(){
+        return toysToDrop.size()-1;
+    } 
 
     public void addToysToDrop(Toy toy) {
         toysToDrop.add(toy);
