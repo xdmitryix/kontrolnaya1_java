@@ -5,9 +5,9 @@ public class Main {
         Machine_of_toy machine_of_toy = new Machine_of_toy();
         DropToy dropToy = new DropToy();
         int temp;
-        machine_of_toy.addToy(new Robot(1, "robot", 20, 10));
-        machine_of_toy.addToy(new Constructor(2, "constructor", 20, 15));
-        machine_of_toy.addToy(new Doll(3, "doll", 60, 5));
+        machine_of_toy.addToy(new Robot(1, "robot", 20, 1));
+        machine_of_toy.addToy(new Constructor(2, "constructor", 20, 1));
+        machine_of_toy.addToy(new Doll(3, "doll", 60, 1));
         System.out.println("Начальный список игрушек в автомате:\n");
         machine_of_toy.showAll();
 
@@ -31,11 +31,15 @@ public class Main {
                     }
                 }
                 Toy tempToyDrop = machine_of_toy.getToyAtIndex(temp);
-                dropToy.addToysToDrop(tempToyDrop);
-                int quantityTemp = (machine_of_toy.getToyAtIndex(temp)).getQuantity();
-                (machine_of_toy.getToyAtIndex(temp)).setQuantity(--quantityTemp);
-                int sizeDropToy = dropToy.getLengthDropArr();
-                dropToy.getToysToDropIndex(sizeDropToy).setQuantity(1);
+                if ((machine_of_toy.getToyAtIndex(temp).getQuantity()) >= 1) {
+                    dropToy.addToysToDrop(tempToyDrop);
+                    int quantityTemp = (machine_of_toy.getToyAtIndex(temp)).getQuantity();
+                    (machine_of_toy.getToyAtIndex(temp)).setQuantity(--quantityTemp);
+                    // int sizeDropToy = dropToy.getLengthDropArr();
+                    // dropToy.getToysToDropIndex(sizeDropToy).setQuantity(1);
+                }else{
+                    System.out.println("к сожалению эта игрушка уже заклнчилась в автомате. попробуйте ещё раз!");
+                }
             }else{
                 if(command.equals("show")){
                     System.out.println("Оставшийстя список игрушек в автомате:\n");

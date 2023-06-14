@@ -8,6 +8,10 @@ public class Machine_of_toy {
         this.toysInMachine.add(newToy);
     }
 
+    public void toyRemove(Toy rmToy){
+        this.toysInMachine.remove(rmToy)
+    }
+
     public void showAll(){
         for (Toy toysInMachine: this.toysInMachine){
             System.out.println(toysInMachine);
@@ -17,6 +21,7 @@ public class Machine_of_toy {
     public Toy getToyAtIndex(int index) {
         return toysInMachine.get(index);
     }
+
 
 
 }
