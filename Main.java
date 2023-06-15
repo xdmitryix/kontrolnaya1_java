@@ -10,6 +10,9 @@ public class Main {
         machine_of_toy.addToy(new Doll(3, "doll", 60, 1));
         System.out.println("Начальный список игрушек в автомате:\n");
         machine_of_toy.showAll();
+        System.out.println("");
+        System.out.println("список команд:\n drop-добавить игрушку в список на выдачу\n show-показать оставшиеся игрушки в автомате\n shdr-показать список игрушек на выдачу\n give-выдать игрушку по порядку\n help-список команд\n exit-выход\n");
+
 
         while(true){
             Scanner iScanner = new Scanner(System.in, "Cp866");
