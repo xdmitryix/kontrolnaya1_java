@@ -1,7 +1,8 @@
 //  Т.К условие и суть задачи считаю не очень понятными, позволил себе скорректировать условие с сдлелал задачу как посчитал логичным.
 //  В программе изначально задан массив с игрушками в нём. В числе полей для игрушек есть их количество(которое в данный момент находится в автомате).
 //  Производится рандомный розыгрыш игрушки. Эта игрушка добаляется в массив "на выдачу победителю". Количество в изначальном массиве убавляется на один.
-//  Так же реализован метод для выдачи приза клиету "give"(игрушка выдается по порядку и удаляется из массива на выдачу). 
+//  Так же реализован метод для выдачи приза клиету "give"(игрушка выдается по порядку и удаляется из массива на выдачу).
+//  Выданные игрушки записываются в txt-файл. 
 
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Machine_of_toy machine_of_toy = new Machine_of_toy();
         DropToy dropToy = new DropToy();
+        TextFileWriter textFileWriter = new TextFileWriter("TXTtextFileWriter");
         int temp;
         machine_of_toy.addToy(new Robot(1, "robot", 20, 1));
         machine_of_toy.addToy(new Constructor(2, "constructor", 20, 1));
@@ -43,8 +45,6 @@ public class Main {
                     dropToy.addToysToDrop(tempToyDrop);
                     int quantityTemp = (machine_of_toy.getToyAtIndex(temp)).getQuantity();
                     (machine_of_toy.getToyAtIndex(temp)).setQuantity(--quantityTemp);
-                    // int sizeDropToy = dropToy.getLengthDropArr();
-                    // dropToy.getToysToDropIndex(sizeDropToy).setQuantity(1);
                 }else{
                     System.out.println("к сожалению эта игрушка уже заклнчилась в автомате. попробуйте ещё раз!");
                 }
@@ -60,9 +60,11 @@ public class Main {
                         if (command.equals("give")){
                             int dropEmpty = dropToy.isEmptyList();
                             if (dropEmpty == 1){      
-                                System.out.println("все игрушки уже раздали победителям!");                          
+                                System.out.println("все игрушки уже раздали победителям!");
+                                textFileWriter.write("все игрушки уже раздали победителям!");                          
                             }else{
                                 System.out.println("Игрушка выдана победителю:\n" + dropToy.getToysToDropIndex(0));
+                                textFileWriter.write("Игрушка выдана победителю:\n" + dropToy.getToysToDropIndex(0));
                                 dropToy.dellDropIndex(0);
                             }
                         }else{
