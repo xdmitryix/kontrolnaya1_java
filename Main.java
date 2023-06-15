@@ -12,9 +12,9 @@ public class Main {
         DropToy dropToy = new DropToy();
         TextFileWriter textFileWriter = new TextFileWriter("TXTtextFileWriter");
         int temp;
-        machine_of_toy.addToy(new Robot(1, "robot", 20, 1));
-        machine_of_toy.addToy(new Constructor(2, "constructor", 20, 1));
-        machine_of_toy.addToy(new Doll(3, "doll", 60, 1));
+        machine_of_toy.addToy(new Robot(1, "robot", 20, 5));
+        machine_of_toy.addToy(new Constructor(2, "constructor", 20, 6));
+        machine_of_toy.addToy(new Doll(3, "doll", 60, 7));
         System.out.println("Начальный список игрушек в автомате:\n");
         machine_of_toy.showAll();
         System.out.println("");
